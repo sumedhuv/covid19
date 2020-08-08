@@ -79,7 +79,6 @@ let country_list = [
   { name: "Bulgaria", code: "BG" },
   { name: "Tunisia", code: "TN" },
   { name: "Ghana", code: "GH" },
-  { name: "Ivory Coast", code: "CI" },
   { name: "Cyprus", code: "CY" },
 
   { name: "Lebanon", code: "LB" },
@@ -98,15 +97,15 @@ let country_list = [
   { name: "Malta", code: "MT" },
   { name: "Taiwan", code: "TW" },
   { name: "Jordan", code: "JO" },
-  { name: "Réunion", code: "RE" },
+ 
   { name: "Georgia", code: "GE" },
   { name: "Senegal", code: "SN" },
   { name: "Mauritius", code: "MU" },
-  { name: "DRC", code: "CD" },
+
   { name: "Montenegro", code: "ME" },
-  { name: "Isle of Man", code: "IM" },
+ 
   { name: "Sri Lanka", code: "LK" },
-  { name: "Mayotte", code: "YT" },
+  
   { name: "Kenya", code: "KE" },
   { name: "Vietnam", code: "VN" },
   { name: "Guatemala", code: "GT" },
@@ -118,7 +117,7 @@ let country_list = [
   { name: "Tanzania", code: "TZ" },
 
   { name: "Rwanda", code: "RW" },
-  { name: "Congo(Kinshasa)", code: "CD" },
+  { name: "Congo (Kinshasa)", code: "CD" },
   { name: "Congo (Brazzaville)", code: "CG" },
 
   { name: "Somalia", code: "SO" },
