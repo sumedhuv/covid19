@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Stylesheet linked-->
+    <link rel="stylesheet" href="./resources/css/style.css" />
+    <!-- Google fonts linked-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <title>COVID-19 STATS</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+      crossorigin="anonymous"
+    ></script>
+   
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./resources/img/cologo.png" alt="" />
+        <p>
+          COVID-19 <br />
+          Stats
+        </p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#second"> Check Your Country</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="test">
+      <section id="first">
+        <div class="world">
+          <h2>
+            Worldwide Covid-19 situation
+          </h2>
+          <table>
+            <tr>
+              <th>Total Cases</th>
+              <th>New Cases</th>
+            </tr>
+            <tr>
+              <td id="tcases"></td>
+              <td id="ncases"></td>
+            </tr>
+            <tr>
+              <th>Total Recovered</th>
+              <th>New Recovered</th>
+            </tr>
+            <tr>
+              <td id="trecovered"></td>
+              <td id="nrecovered"></td>
+            </tr>
+            <tr>
+              <th>Total Deaths</th>
+              <th>New Deaths</th>
+            </tr>
+            <tr>
+              <td id="tdeaths"></td>
+              <td id="ndeaths"></td>
+            </tr>
+          </table>
+          
+        </div>
+      </section>
+      <section id="second">
+        <div class="stats">
+          <div class="latest-report">
+            <div class="country">
+              <div class="name">Global</div>
+              <div class="change-country">Change</div>
+              <div class="search-country">
+                <div class="search-box">
+                  <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search Country...."
+                  />
+
+                  <img class="close" src="resources/img/close.svg" alt="" />
+                </div>
+                <div class="country-list"></div>
+              </div>
+            </div>
+
+            <div class="total-cases">
+              <div class="title">Total Cases</div>
+              <div class="value"></div>
+              <div class="new-value"></div>
+            </div>
+            <div class="recovered">
+              <div class="title">Recovered</div>
+              <div class="value">0</div>
+              <div class="new-value">+0</div>
+            </div>
+            <div class="deaths">
+              <div class="title">Deaths</div>
+              <div class="value"></div>
+              <div class="new-value"></div>
+            </div>
+          </div>
+          <div class="chart">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </section>
+    
+    </main>
+  </div>
+    <footer>
+      <div class="footer-container">
+        <div class="copyright">
+          <p>Copyright © 2020 Sumedh</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="resources/js/countries.js"></script>
+    <script src="resources/js/app.js"></script>
+  </body>
+
+
+  
+</html>
+
+
+
