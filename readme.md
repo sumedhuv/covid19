@@ -1,4 +1,4 @@
-### Covid-19 daily updates tracker
+### Covid-19 Web Application using Rest API
 
-<p> Hello </p>
-<img src="/corona/resources/img/cologo.png">
+<p> Developed to track the daily updates of the novel corona virus worldwide</p>
+
