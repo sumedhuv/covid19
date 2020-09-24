@@ -12,40 +12,41 @@ let app_data = [],
 let user_country = "India";
 
 function fetchData(user_country) {
-  fetch("https://api.covid19api.com/summary")
+  fetch("https://api.apify.com/v2/key-value-stores/SmuuI0oebnTWjRTUh/records/LATEST?disableRedirect=true")
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data.regionData[0]);
       for (let i = 0; i < 186; i++) {
-        if (data.Countries[i].Country == user_country) {
-          let DATA = data.Countries[i];
-          country_name_element.innerHTML = DATA.Country;
+        if (data.regionData[i].country == user_country) {
+          let DATA = data.regionData[i];
+          country_name_element.innerHTML = DATA.country;
           app_data.push(DATA);
           cases_list.splice(0, cases_list.length);
-          cases_list.push(DATA.TotalConfirmed);
-          cases_list.push(DATA.TotalRecovered);
-          cases_list.push(DATA.TotalDeaths);
+          cases_list.push(DATA.totalCases);
+          cases_list.push(DATA.totalRecovered);
+          cases_list.push(DATA.totalDeaths);
           console.log(cases_list);
         }
         document.getElementById(
           "tcases"
-        ).innerHTML = data.Global.TotalConfirmed.toLocaleString("en");
+        ).innerHTML = data.regionData[0].totalCases.toLocaleString("en");
         document.getElementById(
           "ncases"
-        ).innerHTML = data.Global.NewConfirmed.toLocaleString("en");
+        ).innerHTML = data.regionData[0].newCases.toLocaleString("en");
         document.getElementById(
           "trecovered"
-        ).innerHTML = data.Global.TotalRecovered.toLocaleString("en");
+        ).innerHTML = data.regionData[0].totalRecovered.toLocaleString("en");
         document.getElementById(
           "nrecovered"
-        ).innerHTML = data.Global.NewRecovered.toLocaleString("en");
+        ).innerHTML = data.regionData[0].activeCases.toLocaleString("en");
         document.getElementById(
           "tdeaths"
-        ).innerHTML = data.Global.TotalDeaths.toLocaleString("en");
+        ).innerHTML = data.regionData[0].totalDeaths.toLocaleString("en");
         document.getElementById(
           "ndeaths"
-        ).innerHTML = data.Global.NewDeaths.toLocaleString("en");
+        ).innerHTML = data.regionData[0].newDeaths.toLocaleString("en");
       }
     })
 
@@ -66,28 +67,26 @@ function updateUI() {
 
 function updateStats() {
   let last_entry = app_data.length - 1;
-  country_name_element.innerHTML = app_data[last_entry].Country.toLocaleString(
+  console.log(app_data);
+  country_name_element.innerHTML = app_data[last_entry].country.toLocaleString(
     "en"
   );
   total_cases_element.innerHTML = app_data[
     last_entry
-  ].TotalConfirmed.toLocaleString("en");
+  ].totalCases.toLocaleString("en");
   new_cases_element.innerHTML = `+${app_data[
     last_entry
-  ].NewConfirmed.toLocaleString("en")}`;
-  deaths_element.innerHTML = app_data[last_entry].TotalDeaths.toLocaleString(
+  ].newCases.toLocaleString("en")}`;
+  deaths_element.innerHTML = app_data[last_entry].totalDeaths.toLocaleString(
     "en"
   );
-  new_deaths_element.innerHTML = `+${app_data[
-    last_entry
-  ].NewDeaths.toLocaleString("en")}`;
+  
   recovered_element.innerHTML = app_data[
     last_entry
-  ].TotalRecovered.toLocaleString("en");
-  new_recovered_element.innerHTML = `+${app_data[
-    last_entry
-  ].NewRecovered.toLocaleString("en")}`;
+  ].totalRecovered.toLocaleString("en");
+  
 }
+console.log(cases_list);
 
 let my_chart;
 var countries = document.getElementById("myChart").getContext("2d");
